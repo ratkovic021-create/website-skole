@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd frontend && yarn install --ignore-scripts && yarn build",
-  "outputDirectory": "frontend/build",
+  "buildCommand": "npm install --legacy-peer-deps && npm run build",
+  "outputDirectory": "build",
   "installCommand": "echo skip"
 }
