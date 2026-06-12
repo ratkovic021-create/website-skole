@@ -1,0 +1,129 @@
+{
+  "theme": "light",
+  "archetype": "1 (Organic & Earthy / Warm Editorial)",
+  "typography": {
+    "heading_font": "Cormorant Garamond",
+    "body_font": "Manrope",
+    "instructions": "Do not use Inter. Use Cormorant Garamond for all H1, H2, H3. Use Manrope for body text and small labels. Add tight letter spacing to headings."
+  },
+  "colors": {
+    "background": "#FBF9F6",
+    "surface": "#F2EFE9",
+    "surface_glass": "bg-white/70 backdrop-blur-xl",
+    "text_primary": "#1C211F",
+    "text_secondary": "#4A524E",
+    "primary": "#B84A39",
+    "primary_hover": "#9A3C2D",
+    "accent": "#2B4C3B",
+    "border": "#D8D2C9",
+    "instructions": "Do not use standard blue/purple SaaS colors. Stick strictly to this warm, academic, editorial palette. The brand feels established, human, and professional."
+  },
+  "layout": {
+    "spacing": "Generous spacing. Use p-8, p-12, p-24.",
+    "grid": "Use Mode A: The Tetris Grid for the Services section to break standard symmetry. Mix wide and tall cards.",
+    "border_radius": "rounded-none or max rounded-md to maintain an editorial/academic look. Avoid pill-shaped buttons unless it's the sticky mobile CTA.",
+    "components": {
+      "button": "Solid colors, sharp or slightly rounded corners (rounded-sm). MUST include phone icon for main CTAs.",
+      "cards": "Flat background with 1px border (#D8D2C9). No heavy drop shadows. Rely on typography for hierarchy."
+    }
+  },
+  "content_requirements": {
+    "language": "Serbian (Latinica)",
+    "restrictions": [
+      "DO NOT include prices anywhere.",
+      "Only use the provided images.",
+      "NEVER use placeholder text or dummy links."
+    ],
+    "key_info": {
+      "phone_display": "064 1140600",
+      "phone_link": "tel:+381641140600",
+      "address": "Petra Drapšina 32, Novi Sad 21000",
+      "working_hours": "Pon-Pet: 10:00 - 21:00, Sub: 10:00 - 16:00, Ned: Zatvoreno",
+      "rating": "5.0",
+      "reviews_count": "27"
+    },
+    "services": [
+      "Grupni časovi",
+      "Napredni nivo",
+      "Individualni časovi",
+      "Časovi za odrasle",
+      "Početni nivo",
+      "Srednji nivo",
+      "Engleski jezik",
+      "Nemački jezik",
+      "Online časovi",
+      "Ruski jezik",
+      "Srpski za strance"
+    ]
+  },
+  "sections": [
+    {
+      "name": "Navigation / Header",
+      "design": "Clean, glassmorphism or solid #FBF9F6 background. Left: 'Language First' logo text (Cormorant Garamond, italicized). Right: Nav links and 'Pozovite nas' button. Must be sticky z-50."
+    },
+    {
+      "name": "Hero",
+      "design": "Massive typography for 'Language First'. Subtitle explaining it's an elite language school in Novi Sad. Large primary CTA 'Pozovite nas: 064 1140600'. Use an elegant split layout (left text, right image)."
+    },
+    {
+      "name": "Marquee",
+      "design": "An editorial ribbon running slowly across the screen with the languages: 'ENGLESKI JEZIK • NEMAČKI JEZIK • RUSKI JEZIK • SRPSKI ZA STRANCE'. Use a serif font, large text, pale background (#F2EFE9) with text_primary."
+    },
+    {
+      "name": "About / Rating",
+      "design": "Clean, authoritative section highlighting the 5.0 rating with 27 reviews. Title 'Zašto izabrati nas?' (Why choose us). Showcase the premium academic approach."
+    },
+    {
+      "name": "Services (Bento Grid)",
+      "design": "An asymmetric grid containing all 11 services. Make 'Engleski jezik', 'Nemački jezik', 'Ruski jezik', 'Srpski za strance' prominent. Mix small chips for levels ('Početni', 'Srednji', 'Napredni') and larger cards for class types ('Grupni', 'Individualni', 'Online', 'Za odrasle')."
+    },
+    {
+      "name": "Location & Contact",
+      "design": "Crucial section. Prominently display 'Petra Drapšina 32, Novi Sad'. Include an iframe embed of Google Maps. Show working hours clearly. Huge secondary CTA to call."
+    },
+    {
+      "name": "Sticky Mobile CTA",
+      "design": "On mobile devices, a fixed bottom button (w-full or a floating circular FAB) 'Pozovite nas: 064 1140600'."
+    }
+  ],
+  "image_urls": [
+    {
+      "url": "https://images.unsplash.com/photo-1758270704787-615782711641?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwzfHxsYW5ndWFnZSUyMGNsYXNzcm9vbXxlbnwwfHx8fDE3ODEyNzg2NzN8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Students talking in a lecture hall. Ideal for Hero section or About section.",
+      "category": "hero"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1558443957-d056622df610?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwyfHxsYW5ndWFnZSUyMGNsYXNzcm9vbXxlbnwwfHx8fDE3ODEyNzg2NzN8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Writing on a chalkboard. Good for About or Services background.",
+      "category": "background"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1564982547455-b9e810ae9223?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmUlMjBub3ZpJTIwc2FkfGVufDB8fHx8MTc4MTI3ODY3M3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Novi Sad architecture. Good for Location section near the map.",
+      "category": "location"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1721702754494-fdd7189f946c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwzfHxzdHVkZW50cyUyMGxlYXJuaW5nJTIwbGlicmFyeXxlbnwwfHx8fDE3ODEyNzg2NjV8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Large elegant library. Good as an alternative atmospheric background.",
+      "category": "atmosphere"
+    }
+  ],
+  "accessibility_and_interactions": [
+    "All interactive elements MUST have a `data-testid` attribute (e.g., `data-testid=\"hero-call-button\"`, `data-testid=\"location-map\"`).",
+    "Phone numbers should use `href=\"tel:+381641140600\"`.",
+    "Hover states must be prominent. Links should probably have an underline that appears on hover.",
+    "Images need descriptive alt text in Serbian."
+  ],
+  "instructions_to_main_agent": [
+    "Build the application using React, Tailwind CSS, and Framer Motion.",
+    "Do NOT use HTML <select> or <input type='date'>. If you need form elements, use Shadcn UI.",
+    "Follow the Warm Editorial design aesthetic strictly. This is not a typical SaaS startup. Use elegant serif fonts, sophisticated colors, and sharp or lightly rounded corners.",
+    "Make sure all text is exclusively in Serbian (Latinica).",
+    "No prices should be mentioned anywhere on the site.",
+    "Ensure 'Petra Drapšina 32, Novi Sad' and '064 1140600' are highly visible.",
+    "Import Google Fonts directly in index.css (e.g. `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap');`).",
+    "Configure Tailwind config with `fontFamily: { serif: ['Cormorant Garamond', 'serif'], sans: ['Manrope', 'sans-serif'] }`.",
+    "Install lucide-react for phone and location icons.",
+    "Install react-fast-marquee to create the editorial scrolling text."
+  ]
+}
