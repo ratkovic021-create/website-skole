@@ -1,9 +1,13 @@
 import { Phone, MapPin } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const PHONE_DISPLAY = "064 1140600";
 const PHONE_LINK = "tel:+381641140600";
 
 export default function Footer() {
+  const { t } = useLanguage();
+  const f = t.footer;
+
   return (
     <footer
       data-testid="site-footer"
@@ -17,14 +21,13 @@ export default function Footer() {
               <span className="font-serif text-3xl text-brand">First.</span>
             </div>
             <p className="mt-4 font-sans text-sm text-ink-muted max-w-sm leading-relaxed">
-              Škola stranih jezika u Novom Sadu. Engleski, nemački, ruski i
-              srpski za strance — za sve uzraste i nivoe.
+              {f.desc}
             </p>
           </div>
 
           <div className="md:col-span-3">
             <div className="font-sans text-xs uppercase tracking-[0.2em] text-ink-muted mb-4">
-              Kontakt
+              {f.contact}
             </div>
             <a
               href={PHONE_LINK}
@@ -38,7 +41,7 @@ export default function Footer() {
 
           <div className="md:col-span-4">
             <div className="font-sans text-xs uppercase tracking-[0.2em] text-ink-muted mb-4">
-              Adresa
+              {f.address}
             </div>
             <a
               href="https://maps.google.com/?q=Petra+Drap%C5%A1ina+32,+Novi+Sad"
@@ -57,10 +60,10 @@ export default function Footer() {
 
         <div className="border-t border-line pt-8 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
           <p className="font-sans text-xs text-ink-muted">
-            © {new Date().getFullYear()} Language First · Škola stranih jezika
+            © {new Date().getFullYear()} Language First · {f.copy}
           </p>
           <p className="font-sans text-xs text-ink-muted italic">
-            Reči koje otvaraju svet.
+            {f.tagline}
           </p>
         </div>
       </div>

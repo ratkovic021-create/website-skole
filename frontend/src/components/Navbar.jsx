@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, MapPin, Menu, X } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const PHONE_DISPLAY = "064 1140600";
 const PHONE_LINK = "tel:+381641140600";
 
-const navLinks = [
-  { label: "Jezici", href: "#jezici" },
-  { label: "Časovi", href: "#casovi" },
-  { label: "O nama", href: "#o-nama" },
-  { label: "Lokacija", href: "#lokacija" },
-];
+const LANGS = ["sr", "en", "ru"];
+const LANG_LABELS = { sr: "SR", en: "EN", ru: "RU" };
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { lang, setLang, t } = useLanguage();
+
+  const navLinks = [
+    { label: t.nav.languages, href: "#jezici" },
+    { label: t.nav.classes, href: "#casovi" },
+    { label: t.nav.about, href: "#o-nama" },
+    { label: t.nav.location, href: "#lokacija" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -51,7 +56,6 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              data-testid={`nav-link-${l.label.toLowerCase().replace(/\s+/g, "-")}`}
               className="editorial-link font-sans text-sm text-ink/80 hover:text-ink transition-colors"
             >
               {l.label}
@@ -59,14 +63,31 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a
-          href={PHONE_LINK}
-          data-testid="navbar-call-button"
-          className="hidden md:inline-flex items-center gap-2 bg-ink text-paper px-5 py-2.5 text-sm font-sans font-medium hover:bg-brand transition-colors duration-300"
-        >
-          <Phone className="w-4 h-4" strokeWidth={1.8} />
-          {PHONE_DISPLAY}
-        </a>
+        <div className="hidden md:flex items-center gap-3">
+          <div className="flex items-center gap-1 border border-line rounded-sm overflow-hidden">
+            {LANGS.map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`font-sans text-xs px-2.5 py-1.5 transition-colors duration-200 ${
+                  lang === l
+                    ? "bg-ink text-paper"
+                    : "text-ink/60 hover:text-ink hover:bg-paper-warm"
+                }`}
+              >
+                {LANG_LABELS[l]}
+              </button>
+            ))}
+          </div>
+          <a
+            href={PHONE_LINK}
+            data-testid="navbar-call-button"
+            className="inline-flex items-center gap-2 bg-ink text-paper px-5 py-2.5 text-sm font-sans font-medium hover:bg-brand transition-colors duration-300"
+          >
+            <Phone className="w-4 h-4" strokeWidth={1.8} />
+            {PHONE_DISPLAY}
+          </a>
+        </div>
 
         <button
           data-testid="navbar-mobile-toggle"
@@ -99,6 +120,21 @@ export default function Navbar() {
                   {l.label}
                 </a>
               ))}
+              <div className="flex items-center gap-1 border border-line rounded-sm overflow-hidden w-fit">
+                {LANGS.map((l) => (
+                  <button
+                    key={l}
+                    onClick={() => setLang(l)}
+                    className={`font-sans text-xs px-3 py-2 transition-colors duration-200 ${
+                      lang === l
+                        ? "bg-ink text-paper"
+                        : "text-ink/60 hover:text-ink"
+                    }`}
+                  >
+                    {LANG_LABELS[l]}
+                  </button>
+                ))}
+              </div>
               <a
                 href={PHONE_LINK}
                 data-testid="navbar-mobile-call"

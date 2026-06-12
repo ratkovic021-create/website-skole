@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { Phone, MapPin, Star, ArrowDownRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
-const PHONE_DISPLAY = "064 1140600";
 const PHONE_LINK = "tel:+381641140600";
 
 export default function Hero() {
+  const { t } = useLanguage();
+  const h = t.hero;
+
   return (
     <section
       id="top"
@@ -12,7 +15,6 @@ export default function Hero() {
       className="relative pt-32 md:pt-40 pb-20 md:pb-28 overflow-hidden grain"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-14 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
-        {/* LEFT — Editorial text */}
         <div className="lg:col-span-7">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -22,15 +24,11 @@ export default function Hero() {
           >
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-4 h-4 text-brand fill-brand"
-                  strokeWidth={1.5}
-                />
+                <Star key={i} className="w-4 h-4 text-brand fill-brand" strokeWidth={1.5} />
               ))}
             </div>
             <span className="font-sans text-xs tracking-[0.2em] uppercase text-ink-muted">
-              5.0 · 27 recenzija na Google-u
+              {h.reviews}
             </span>
           </motion.div>
 
@@ -40,9 +38,9 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="font-serif text-[14vw] sm:text-[10vw] lg:text-[8.5rem] xl:text-[9.5rem] leading-[0.92] tracking-tight text-ink"
           >
-            Reči koje
+            {h.h1a}
             <br />
-            <span className="italic text-brand">otvaraju</span> svet.
+            <span className="italic text-brand">{h.h1b}</span> {h.h1c}
           </motion.h1>
 
           <motion.p
@@ -51,9 +49,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.35 }}
             className="mt-10 max-w-xl font-sans text-base md:text-lg leading-relaxed text-ink-muted"
           >
-            Škola stranih jezika u srcu Novog Sada. Već godinama predajemo
-            engleski, nemački, ruski i srpski za strance — s posvećenošću,
-            metodom i ljudskim pristupom koji se pamti.
+            {h.desc}
           </motion.p>
 
           <motion.div
@@ -67,11 +63,8 @@ export default function Hero() {
               data-testid="hero-call-button"
               className="group inline-flex items-center gap-3 bg-brand hover:bg-brand-hover text-paper px-7 py-4 font-sans text-base font-medium transition-all duration-300"
             >
-              <Phone
-                className="w-5 h-5 group-hover:rotate-12 transition-transform"
-                strokeWidth={1.8}
-              />
-              Pozovite nas: {PHONE_DISPLAY}
+              <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" strokeWidth={1.8} />
+              {h.call}: 064 1140600
             </a>
 
             <a
@@ -86,7 +79,6 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT — Image with editorial frame */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -104,12 +96,12 @@ export default function Hero() {
 
           <div className="absolute -bottom-6 -left-6 bg-paper border border-line px-5 py-4 max-w-[220px]">
             <div className="font-serif text-3xl text-ink leading-none">
-              4 <span className="text-brand">jezika</span>
+              4 <span className="text-brand">{h.langCard.replace("4 ", "")}</span>
             </div>
             <div className="font-sans text-xs uppercase tracking-[0.18em] text-ink-muted mt-2">
-              Engleski · Nemački
-              <br />
-              Ruski · Srpski
+              {h.languages.split("\n").map((line, i) => (
+                <span key={i}>{line}{i === 0 && <br />}</span>
+              ))}
             </div>
           </div>
         </motion.div>

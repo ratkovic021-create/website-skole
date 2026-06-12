@@ -1,5 +1,6 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "@/context/LanguageContext";
 import PasswordGate from "@/components/PasswordGate";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -31,15 +32,17 @@ const Home = () => {
 
 function App() {
   return (
-    <PasswordGate>
-      <div className="App">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </PasswordGate>
+    <LanguageProvider>
+      <PasswordGate>
+        <div className="App">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </PasswordGate>
+    </LanguageProvider>
   );
 }
 
