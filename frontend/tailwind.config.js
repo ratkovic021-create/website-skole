@@ -20,19 +20,19 @@ module.exports = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         ink: {
-          DEFAULT: '#1C211F',
-          muted: '#4A524E',
+          DEFAULT: '#1A2540',
+          muted: '#3D5080',
         },
         paper: {
-          DEFAULT: '#FBF9F6',
-          warm: '#F2EFE9',
+          DEFAULT: '#F0F6FF',
+          warm: '#E2EDFF',
         },
         brand: {
-          DEFAULT: '#B84A39',
-          hover: '#9A3C2D',
-          forest: '#2B4C3B',
+          DEFAULT: '#2563EB',
+          hover: '#1D4ED8',
+          forest: '#1E3A8A',
         },
-        line: '#D8D2C9',
+        line: '#BFDBFE',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'

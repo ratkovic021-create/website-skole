@@ -13,37 +13,37 @@ body {
     font-family: 'Manrope', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #FBF9F6;
-    color: #1C211F;
+    background-color: #F0F6FF;
+    color: #1A2540;
 }
 
 ::selection {
-    background-color: #B84A39;
-    color: #FBF9F6;
+    background-color: #2563EB;
+    color: #F0F6FF;
 }
 
 @layer base {
     :root {
-        --background: 38 30% 97%;
-        --foreground: 150 7% 12%;
-        --card: 38 30% 97%;
-        --card-foreground: 150 7% 12%;
-        --popover: 38 30% 97%;
-        --popover-foreground: 150 7% 12%;
-        --primary: 10 53% 47%;
-        --primary-foreground: 38 30% 97%;
-        --secondary: 40 18% 93%;
-        --secondary-foreground: 150 7% 12%;
-        --muted: 40 18% 93%;
-        --muted-foreground: 150 7% 30%;
-        --accent: 144 28% 23%;
-        --accent-foreground: 38 30% 97%;
+        --background: 214 100% 97%;
+        --foreground: 224 40% 18%;
+        --card: 214 100% 97%;
+        --card-foreground: 224 40% 18%;
+        --popover: 214 100% 97%;
+        --popover-foreground: 224 40% 18%;
+        --primary: 217 91% 60%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 214 60% 91%;
+        --secondary-foreground: 224 40% 18%;
+        --muted: 214 60% 91%;
+        --muted-foreground: 220 20% 40%;
+        --accent: 221 83% 30%;
+        --accent-foreground: 0 0% 100%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
-        --border: 36 17% 82%;
-        --input: 36 17% 82%;
-        --ring: 10 53% 47%;
-        --radius: 0.25rem;
+        --border: 214 40% 82%;
+        --input: 214 40% 82%;
+        --ring: 217 91% 60%;
+        --radius: 0.5rem;
     }
 }
 
